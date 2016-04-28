@@ -1,0 +1,132 @@
+ping 
+arp -a
+
+dx --dex --output=test02.jar test_ffff_20160408.jar
+
+
+
+$ ssh-keygen.exe
+
+
+
+louis@louis-PC MINGW64 ~
+$ cd .ssh
+
+louis@louis-PC MINGW64 ~/.ssh
+$ ls
+id_rsa  id_rsa.pub
+
+louis@louis-PC MINGW64 ~/.ssh
+$ cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyMVzRGG8u1ZHCcX3Pyjw7MY5Xwfs/mpHY7zM95T+bItlZFYHL8Mv2vxkbrZz/XK2uNEngn6GKp8Nv+0uZ2eLwqvZasLSGzBi3TCP5bHodwCiklu8ZwHqsvqeS4l0qtemHe/xMIJGzWT2w4MTacK4tgrt2HqYWuavWg+UxQH41ENGfUx3aTQoJ02/ze6uIMk7ETK5w0lI+eY1fluHhuNVpclPUaCpmzO0SHcCNd+ixHV6CxSndQ6jcZQ0SH/8JYSx4VYHjsYulU9g9a/tLt8v1NDM/jRAJvrJ4Ti9o4QfwQN501nIWeZxkL7BW3sAucUtkgGvxVUl3Nl0QFHa0ZOYb louis@louis-PC
+
+
+
+
+
+
+
+
+
+louis@louis-PC MINGW64 ~/.ssh
+$ ls
+id_rsa  id_rsa.pub
+
+louis@louis-PC MINGW64 ~/.ssh
+$ cd ..
+
+louis@louis-PC MINGW64 ~
+$ git clone git@192.168.1.98:/home/git/sse.git
+Cloning into 'sse'...
+The authenticity of host '192.168.1.98 (192.168.1.98)' can't be established.
+ECDSA key fingerprint is SHA256:euuV09xFS/KXTsyyFpCYLkGHGRkggD2W8TU9UvVk65g.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.1.98' (ECDSA) to the list of known hosts.
+remote: Counting objects: 862, done.
+remote: Compressing objects: 100% (482/482), done.
+remote: Total 862 (delta 369), reused 648 (delta 274)
+Receiving objects: 100% (862/862), 3.08 MiB | 0 bytes/s, done.
+Resolving deltas: 100% (369/369), done.
+Checking connectivity... done.
+
+
+
+
+
+
+
+
+louis@louis-PC MINGW64 ~
+$ ls sse/tests/
+android/     ios/         mac/         studio/      test-alg.py
+
+louis@louis-PC MINGW64 ~
+$ cd sse
+
+louis@louis-PC MINGW64 ~/sse (master)
+$ ll
+total 16
+drwxr-xr-x 1 louis 197121 0 四月 15 08:13 android/
+drwxr-xr-x 1 louis 197121 0 四月 15 08:13 core/
+drwxr-xr-x 1 louis 197121 0 四月 15 08:13 ios/
+drwxr-xr-x 1 louis 197121 0 四月 15 08:13 tests/
+drwxr-xr-x 1 louis 197121 0 四月 15 08:13 utils/
+
+louis@louis-PC MINGW64 ~/sse (master)
+$ ls android/
+const_str.h  gzip.c  interface.c  logcat.h  myjni.c  myjni.h  network.c  platform.c  platform.h
+
+louis@louis-PC MINGW64 ~/sse (master)
+$ ls ios/
+AFNetworking/  devinfo.m  KeychainWrapper/  platform.m  XdGisService.h  XdGisService.m  XdHttpClient.h  XdHttpClient.m  xindunsdk.h  xindunsdk.m
+
+louis@louis-PC MINGW64 ~/sse (master)
+$ cd ../test
+bash: cd: ../test: No such file or directory
+
+
+
+
+
+
+
+louis@louis-PC MINGW64 ~/sse (master)
+$ git pull
+remote: Counting objects: 54, done.
+remote: Compressing objects: 100% (26/26), done.
+remote: Total 34 (delta 18), reused 0 (delta 0)
+Unpacking objects: 100% (34/34), done.
+From 192.168.1.98:/home/git/sse
+   263e3c2..061f5d8  master     -> origin/master
+Updating 263e3c2..061f5d8
+Fast-forward
+ android/platform.c                                 |  10 +-
+ core/common_func.h                                 |   2 +-
+ tests/android/libs/httpmime-4.2.5.jar              | Bin 26477 -> 0 bytes
+ tests/android/res/values/strings.xml               |   2 +-
+ .../src/com/example/demo/ossca/MainActivity.java   |  31 ++-
+ tests/studio/.idea/workspace.xml                   | 302 +++------------------
+ 6 files changed, 63 insertions(+), 284 deletions(-)
+ delete mode 100755 tests/android/libs/httpmime-4.2.5.jar
+
+
+
+
+
+
+
+
+git clone git@192.168.1.98:/home/git/sse.git
+git push git@192.168.1.98:/home/git/sse.git
+
+
+
+
+$ git pull
+Updating 061f5d8..76aa54f
+error: Your local changes to the following files would be overwritten by merge:
+        android/gzip.c
+        android/network.c
+        android/platform.c
+Please, commit your changes or stash them before you can merge.
+Aborting

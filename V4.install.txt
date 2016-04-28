@@ -1,0 +1,42 @@
+﻿465
+466    /**
+467     * Installer for platform versions 4 to 13.
+468     */
+469    private static final class V4 {
+470        private static void install(ClassLoader loader, List<File> additionalClassPathEntries)
+471                        throws IllegalArgumentException, IllegalAccessException,
+472                        NoSuchFieldException, IOException {
+473            /* The patched class loader is expected to be a descendant of
+474             * dalvik.system.DexClassLoader. We modify its
+475             * fields mPaths, mFiles, mZips and mDexs to append additional DEX
+476             * file entries.
+477             */
+478            int extraSize = additionalClassPathEntries.size();
+479
+480            Field pathField = findField(loader, "path");
+481
+482            StringBuilder path = new StringBuilder((String) pathField.get(loader));
+483            String[] extraPaths = new String[extraSize];
+484            File[] extraFiles = new File[extraSize];
+485            ZipFile[] extraZips = new ZipFile[extraSize];
+486            DexFile[] extraDexs = new DexFile[extraSize];
+487            for (ListIterator<File> iterator = additionalClassPathEntries.listIterator();
+488                    iterator.hasNext();) {
+489                File additionalEntry = iterator.next();
+490                String entryPath = additionalEntry.getAbsolutePath();
+491                path.append(':').append(entryPath);
+492                int index = iterator.previousIndex();
+493                extraPaths[index] = entryPath;
+494                extraFiles[index] = additionalEntry;
+495                extraZips[index] = new ZipFile(additionalEntry);
+496                extraDexs[index] = DexFile.loadDex(entryPath, entryPath + ".dex", 0);
+497            }
+498
+499            pathField.set(loader, path.toString());
+500            expandFieldArray(loader, "mPaths", extraPaths);
+501            expandFieldArray(loader, "mFiles", extraFiles);
+502            expandFieldArray(loader, "mZips", extraZips);
+503            expandFieldArray(loader, "mDexs", extraDexs);
+504        }
+505    }
+506

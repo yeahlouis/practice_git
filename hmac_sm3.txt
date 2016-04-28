@@ -1,0 +1,59 @@
+  private static byte[] padding(byte[] key, byte[] source) throws IOException {
+        if (source.length >= 0x2000000000000000l) {
+            throw new RuntimeException("src data invalid.");
+        }
+        long l = (key.length + source.length) * 8;
+        long k = 448 - (l + 1) % 512;
+        if (k < 0) {
+            k = k + 512;
+        }
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        baos.write(key);
+        baos.write(source);
+        baos.write(FirstPadding);
+        long i = k - 7;
+        while (i > 0) {
+            baos.write(ZeroPadding);
+            i -= 8;
+        }
+        baos.write(long2bytes(l));
+        return baos.toByteArray();
+    }
+
+
+
+  public static byte[] hash(byte[] opad, byte[] source) throws IOException {
+        byte[] m1 = padding(opad, source);
+        int n = m1.length / (512 / 8);
+
+        byte[] b;
+        byte[] vi = IV.toByteArray();
+        byte[] vi1 = null;
+        for (int i = 0; i < n; i++) {
+            b = Arrays.copyOfRange(m1, i * 64, (i + 1) * 64);
+            vi1 = CF(vi, b);
+            vi = vi1;
+        }
+        return vi1;
+    }
+    
+    
+    public static byte[] hmac_hash(byte[] key, byte[] source) throws IOException {
+    	if (null == key || key.length <= 0 || key.length > 64) {
+    		throw new RuntimeException("key data invalid.");
+    	}
+    	if (null == source) {
+    		throw new RuntimeException("source data invalid.");
+    	}
+    	byte[] ipad = new byte[64];
+    	byte[] opad = new byte[64];
+    	Arrays.fill(ipad, (byte)0x36);
+    	Arrays.fill(opad, (byte)0x5C);
+    	for(int i = 0; i < key.length; i++) {
+    		ipad[i] = (byte)(ipad[i] ^ key[i]);
+    		opad[i] = (byte)(opad[i] ^ key[i]);
+    	}
+    	byte[] vi1 = hash(ipad, source);
+        return hash(opad, vi1);
+    }
