@@ -130,3 +130,41 @@ error: Your local changes to the following files would be overwritten by merge:
         android/platform.c
 Please, commit your changes or stash them before you can merge.
 Aborting
+
+
+
+
+louis@louis-PC MINGW64 /c/_other/test/abc
+$ git clone https://github.com/yeahlouis/practice_git.git
+Cloning into 'practice_git'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+
+
+
+$ git push origin master
+
+
+
+
+
+
+
+
+¡­or create a new repository on the command line
+
+echo "# practice_git" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/yeahlouis/practice_git.git
+git push -u origin master
+
+¡­or push an existing repository from the command line
+
+git remote add origin https://github.com/yeahlouis/practice_git.git
+git push -u origin master
+
+¡­or import code from another repository
+
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
