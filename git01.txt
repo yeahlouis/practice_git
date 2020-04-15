@@ -1,13 +1,13 @@
-git clone https://git.trusfort.com:7443/xindun/xd1-samples-android.git
+git clone https://git.xxxxxxxx.com:7443/xxxxxx/xd1-samples-android.git
 
 
 sunxuehu
 123456
 
-# git查看远程仓库地址
+# git鏌ョ湅杩滅▼浠撳簱鍦板潃
 git remote -v
 
-文件夹中 .git/config 
+鏂囦欢澶逛腑 .git/config
 [core]
         repositoryformatversion = 0
         filemode = false
@@ -16,7 +16,7 @@ git remote -v
         symlinks = false
         ignorecase = true
 [remote "origin"]
-        url = https://git.trusfort.com/xindun/xd1-samples-android.git
+        url = https://git.xxxxxxxx.com/xxxxxx/xd1-samples-android.git
         fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "master"]
         remote = origin
@@ -24,14 +24,14 @@ git remote -v
 
 
 
-git修改远程仓库地址
-方法有三种：
-1.修改命令
+git淇敼杩滅▼浠撳簱鍦板潃
+鏂规硶鏈変笁绉嶏細
+1.淇敼鍛戒护
 git remote set-url origin [url]
-例如：git remote set-url origin gitlab@gitlab.chumob.com:PHP/hasoffer.git
-2.先删后加
+渚嬪锛歡it remote set-url origin gitlab@gitlab.chumob.com:PHP/hasoffer.git
+2.鍏堝垹鍚庡姞
 git remote rm origin
 git remote add origin [url]
-3.直接修改config文件
+3.鐩存帴淇敼config鏂囦欢
 
-git remote set-url origin https://git.trusfort.com:7443/xindun/xd1-samples-android.git
+git remote set-url origin https://git.xxxxxxxx.com:7443/xxxxxx/xd1-samples-android.git
