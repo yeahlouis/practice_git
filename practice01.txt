@@ -1,0 +1,33 @@
+
+:. !tr [:lower:] [:upper:]
+:. !tr "[:lower:]" "[:upper:]"
+
+
+
+$ cat testfile | tr a-z A-Z
+
+$ cat testfile | tr [:lower:] [:upper:]
+
+
+192:practice_git louis$ git push
+Username for 'https://github.com': louis_suen@sina.cn
+Password for 'https://louis_suen@sina.cn@github.com':
+Everything up-to-date
+192:practice_git louis$ git pull
+Already up to date.
+192:practice_git louis$ git add .
+192:practice_git louis$ git commit -m "xxxxxx"
+[master c8a5d6a] xxxxxx
+ 1 file changed, 37 insertions(+), 37 deletions(-)
+192:practice_git louis$ git push
+COUNTING OBJECTS: 3, DONE.
+Delta compression using up to 4 threads.
+COMPRESSING OBJECTS: 100% (3/3), DONE.
+WRITING OBJECTS: 100% (3/3), 720 BYTES | 720.00 KIB/S, DONE.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/yeahlouis/practice_git.git
+   dd5c99c..c8a5d6a  master -> master
+192:practice_git louis$ git pull
+Already up to date.
+192:practice_git louis$ ls -al
