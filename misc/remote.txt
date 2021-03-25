@@ -1,7 +1,7 @@
 ls
 
-git clone -b develop sunxuehu@192.168.1.98:sse-core.git develop-sse-core
+git clone -b develop xxxxxxxx@192.168.1.98:sse-core.git develop-sse-core
 
-git clone -b dev sunxuehu@192.168.1.98:sdk-android.git test-sdk-android
+git clone -b dev xxxxxxxx@192.168.1.98:sdk-android.git test-sdk-android
 
 
