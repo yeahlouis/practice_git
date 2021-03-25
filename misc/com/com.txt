@@ -1,0 +1,26 @@
+
+magic type version pad(16)
+
+
+Pathname
+A character string that is used to identify a file. In the context of
+IEEE Std 1003.1-2001, a pathname consists of, at most, {PATH_MAX} bytes,
+including the terminating null byte. It has an optional beginning slash,
+followed by zero or more filenames separated by slashes. A pathname may
+optionally contain one or more trailing slashes. Multiple successive slashes
+are considered to be the same as one slash.
+
+
+VK7JG-NPHTM-C97JM-9MPGT-3V66T
+
+Ghidra
+全面详解 Ghidra
+
+
+逆向工程 (Reverse engineering)
+
+
+
+
+
+Sumatra PDF 是一个支持pdf、epub、mobi、chm、xps、djvu、cbz、cbr等多中格式的windows平台的阅读器。（装机必备呀）

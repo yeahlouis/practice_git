@@ -1,0 +1,38 @@
+
+#define ARRAY_LEN(array) (sizeof(array)/sizeof(*array))
+
+
+magic type version pad(16)
+
+
+Pathname
+A character string that is used to identify a file. In the context of
+IEEE Std 1003.1-2001, a pathname consists of, at most, {PATH_MAX} bytes,
+including the terminating null byte. It has an optional beginning slash,
+followed by zero or more filenames separated by slashes. A pathname may
+optionally contain one or more trailing slashes. Multiple successive slashes
+are considered to be the same as one slash.
+
+
+
+
+开发者移除应用程序中调用的系统风险函数和过期 api,
+同时防止系统直接调 用存在 C 缓冲区溢出的函数如 memcpy、scanf、sprintf、strcpy、vsprintf
+
+
+std::transform (foo.begin(), foo.end(), bar.begin(), ::toupper);
+
+
+小写转大写
+cat testfile |tr [:lower:] [:upper:]
+
+
+/* free memory if the pointer is valid and zero the pointer */
+#ifndef SAFE_FREE
+#define SAFE_FREE(x) do { if ((x) != NULL) {free((x)); (x)=NULL;} } while(0)
+#endif
+
+
+
+-fwritable-strings:把字符串常量存储到可写数据段
+
