@@ -12,3 +12,107 @@ super cool vim feature! built in! really easy!
 :source ~/.vim/sessions/foo.vim
 
 There's also a good vim-sessions plugin that adds a few extra features. :-)
+
+
+
+
+
+
+Search for visually selected text
+you can simply yank the selected text with y and go to search mode /, then you can paste the last yanked text with Ctrl+R 0
+
+
+去掉vim给文件加的\n
+如果不需要\n，应该将该文件视为binary文件，保存文档前执行 :set bin noeol 即可
+
+
+
+" 用UTF8编码重新打开加载当前文件
+:e ++enc=utf-8
+" 用GBK编码重新加载
+:e ++enc=gbk
+" GB18030字符集是GBK的超集，为了方便键入使用GBK名
+
+:e ++enc=utf-8 myfile.txt 
+
+" 需要配置到 .vimrc 中
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+"set fileencodings=ucs-bom,utf-8,gb18030,utf-16le,big5,euc-jp,euc-kr,latin1
+
+
+
+set fenc ----查看文件的编码
+set fenc=cp936
+:w  ------转换成gbk编码后保存
+
+:edit ++enc=utf8
+
+ctrl-g--->:f(:file)
+:cd  查看当前目录
+
+ctrl-r ----> :redo
+
+gt--->:tabn {count}
+gT--->:tabp {count}
+
+:bro[wse] ol[dfiles][!]
+列出文件名与：oldfiles一样，然后提示输入一个数字。当编号有效时，将编辑列表中的文件。使用 ！放弃修改的缓冲区。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+vi把之前的文件名记为#， 当前文件名记为%
+
+
+可以先敲ctrl-v组合键，再敲tab键，这样就不会被转换成空格了。
+
+
+
+
+
+Mac下拷贝VIM中的数据
+1.进入Visual Mode并选中需要拷贝的数据
+2.输入命令：:w !pbcopy拷贝选中的内容至系统剪切板
+
+拷贝整个文件:%w !pbcopy
+从系统剪切板粘贴内容:r !pbpaste
+
+
+空格替换为TAB：
+:set ts=4
+:set noexpandtab
+:%retab!
+加!是用于处理非空白字符之后的TAB，即所有的TAB，若不加!，则只处理行首的TAB。
+
+
+TAB替换为空格：
+:set ts=4
+:set expandtab
+:%retab!
+
+
+syntax on
+set expandtab "使用空格代替tab. 
+set tabstop=4
+set shiftwidth=4
+
+set nocompatible
+syntax on
+set nu
+set nobackup
+autocmd FileType make set noexpandtab
+
+
