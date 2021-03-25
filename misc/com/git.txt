@@ -1,0 +1,38 @@
+Git-Flow 有以下几种分支：
+feature 分支：开发者进行功能开发的分支。
+develop 分支：对开发的功能进行集成的分支。
+release 分支：负责版本发布的分支。
+hotfix 分支：对线上缺陷进行修改工作的分支。
+master：保存最新已发布版本基线的分支。
+
+
+
+
+git config --global user.name "aaaaa"
+git config --global user.email "aaaaa@qq.com"
+
+进行项目所在的目录，和 .git 目录平行
+git config user.name "bbbbb"
+git config user.email "bbbbb@qq.com"
+git config --list 命令进行查看
+
+git init
+git add .
+git commit -m "First commit"
+
+
+
+git config --global user.name "louis"
+git config --global user.email "louis@xx.com"
+git init
+git add .
+git commit -m "First commit."
+
+git remote add origin url
+git pull --rebase origin master
+git push -u origin master
+
+git checkout -b newbranch
+git push origin newbranch:newbranch
+冒号前为本地分支
+git reset --hard XXX

@@ -1,0 +1,28 @@
+
+magic type version pad(16)
+
+
+树莓派Raspbian系统默认密码为raspberry，ubuntu mate默认密码为ubuntu
+
+
+
+那么如何保证公钥的安全可信呢？这就要靠数字证书来解决了。
+
+
+Pathname
+A character string that is used to identify a file. In the context of
+IEEE Std 1003.1-2001, a pathname consists of, at most, {PATH_MAX} bytes,
+including the terminating null byte. It has an optional beginning slash,
+followed by zero or more filenames separated by slashes. A pathname may
+optionally contain one or more trailing slashes. Multiple successive slashes
+are considered to be the same as one slash.
+
+
+
+
+物联网、大数据和人工智能相互融合并创建自动化生态系统。
+物联网设备收集数百万条标准的数据，然后在云中进行整理，用于训练和改进人工智能算法。
+物联网、大数据和人工智能相互联系，相互促进。未来，必将带来新世界的巨变。
+
+
+

@@ -20,3 +20,6 @@ Segmentation = zero trus
 设备代理/网关模型
 
 飞地网关
+
+浅谈基于零信任的远程办公
+SDP vs VPN

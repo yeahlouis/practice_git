@@ -1,0 +1,14 @@
+vim sessions
+super cool vim feature! built in! really easy!
+
+1.open a bunch of file
+
+2.tim to close vim
+
+3.create a session!!!
+:mks ~/.vim.sessions/foo.vim
+
+4.easily pick up where you left off!
+:source ~/.vim/sessions/foo.vim
+
+There's also a good vim-sessions plugin that adds a few extra features. :-)
