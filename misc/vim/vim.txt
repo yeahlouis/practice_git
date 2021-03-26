@@ -27,6 +27,17 @@ you can simply yank the selected text with y and go to search mode /, then you c
 
 
 
+Mac下拷贝VIM中的数据
+1.进入Visual Mode并选中需要拷贝的数据
+2.输入命令：:w !pbcopy拷贝选中的内容至系统剪切板
+
+拷贝整个文件:%w !pbcopy
+从系统剪切板粘贴内容:r !pbpaste
+
+
+
+
+
 " 用UTF8编码重新打开加载当前文件
 :e ++enc=utf-8
 " 用GBK编码重新加载
