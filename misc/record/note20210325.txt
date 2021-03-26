@@ -1,0 +1,25 @@
+
+SDP
+
+IDC机房区域
+
+
+红队视角下的HW
+
+
+HW护网
+
+
+微隔离(Micro Segmentation)
+Micro-Segmentation = Identity-based segmentation = Software defined
+Segmentation = zero trus
+
+京麒(组织)
+
+
+设备代理/网关模型
+
+飞地网关
+
+浅谈基于零信任的远程办公
+SDP vs VPN
