@@ -26,5 +26,10 @@ Ghidra
 Sumatra PDF 是一个支持pdf、epub、mobi、chm、xps、djvu、cbz、cbr等多中格式的windows平台的阅读器。（装机必备呀）
 
 
+4.ThinServer
+快速搭建HTTP服务器，Ftp服务，仅43K大小，尤其适合树莓派、香蕉派等小型设备运行轻app或者进行简单文件共享使用。
+项目地址：https://gitee.com/sanluan/ThinServer
+
+
 download window win10
 https://next.itellyou.cn/

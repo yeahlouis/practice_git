@@ -36,3 +36,19 @@ cat testfile |tr [:lower:] [:upper:]
 
 -fwritable-strings:把字符串常量存储到可写数据段
 
+
+
+
+
+
+
+1.%c：对应参数是一个int类型，但实际运行时会将该int类型对象转换为unsigned char类型
+2.%d：对应参数是一个int类型
+3.%f：对应参数是一个double类型
+4.%ld：对应参数是一个long int类型
+5.%s：对应参数是一个const char*类型，表示输出一个字符串
+6.%u：对应参数是一个unsigned int类型
+7.%zu：对应参数是一个size_t类型
+8.%td：对应参数是一个prtdiff_t类型
+9.%x（%X）：对应参数是一个int类型，不过会以十六进制形式输出
+10.%%：输出一个%符号
