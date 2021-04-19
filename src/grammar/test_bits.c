@@ -70,6 +70,19 @@ int bits(unsigned int x)
     return n;
 }
 
+
+static int bit_count(unsigned int i) {
+    // Hacker's Delight, Figure 5-2
+    i -= (i >> 1) & 0x55555555;
+    i = (i & 0x33333333) + ((i >> 2) & 0x33333333);
+    i = ((i >> 4) + i) & 0x0F0F0F0F;
+    i += i >> 8;
+    i += i >> 16;
+    return i & 0x0000003F;
+}
+
+
+
 int main()
 {
     int n;
@@ -82,6 +95,16 @@ int main()
     
     to2print(b, buf, sizeof(buf));
     n = bits(b);
+    LOGW("n = [%d], b = [%d][%#x][%s]\n", n, b, b, buf);
+
+
+    printf("\n====bit_count====\n");
+    to2print(a, buf, sizeof(buf));
+    n = bit_count(a);
+    LOGW("n = [%d], a = [%d][%#x][%s]\n", n, a, a, buf);
+    
+    to2print(b, buf, sizeof(buf));
+    n = bit_count(b);
     LOGW("n = [%d], b = [%d][%#x][%s]\n", n, b, b, buf);
 
     return 0;

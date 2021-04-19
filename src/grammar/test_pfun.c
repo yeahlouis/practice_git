@@ -44,6 +44,7 @@ int main ()
     tfc.b = b;
     tfc.funp = add;
 
+
     LOGW("a = [%d], b = [%d]\n", a, b);
     c = add;
     sum = (*c)(a, b); //标准写法
@@ -57,10 +58,11 @@ int main ()
     a = sum;
     LOGW("before a = [%d], b = [%d]\n", a, b);
 
-    funp = sub;
+    funp = sub; //等价 funp = &sub;
     a = (*funp)(a, b); 
     
     LOGW("after  a = [%d], b = [%d]\n", a, b);
+    LOGW("funp = [%p], sub = [%p], &sub = [%p]\n", funp, sub, &sub);
 
     a = funp(a, b); 
     

@@ -18,6 +18,24 @@
 #define LOGE(format, ...) do {} while (0)
 #endif
 
+/* square root of a long < 65536 */
+long i_sqrt (long x)
+{
+  long    x1, x2;
+
+  x2 = 16;
+  do {
+    x1 = x2;
+    x2 = x1 - ((x1 * x1) - x) / (2 * x1);
+  } while (x1 != x2);
+
+  if (x1 * x1 > x) {
+    --x1;
+  }
+
+  return x1;
+}
+
 int is_prime(int x)
 {
     int divisor;
@@ -37,7 +55,7 @@ int is_prime(int x)
 
 int main()
 {
-    int a[] = {15, 11, 49};
+    int a[] = {2, 3, 5, 15, 11, 49, 79};
     int i;
 
 
@@ -48,6 +66,15 @@ int main()
             printf("[%d] is not prime\n", a[i]);
         }
     }
+
+    i = i_sqrt(49);
+    printf("sqrt(49) = %d\n", i);
+
+    i = i_sqrt(80);
+    printf("sqrt(80) = %d\n", i);
+
+    i = i_sqrt(512);
+    printf("sqrt(512) = %d\n", i);
 
     return 0;
 }
