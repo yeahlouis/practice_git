@@ -43,7 +43,7 @@ static int reverse_list(struct node **head)
 {
     int ret = -1;
 
-    struct node *prev = NULL, *temp = NULL;
+    struct node *prev = NULL, *next = NULL;
     struct node *cur = NULL;
     
     if (NULL == head) {
@@ -53,10 +53,10 @@ static int reverse_list(struct node **head)
     cur = *head;
 
     while (NULL != cur) {
-        temp = cur->next;
+        next = cur->next;
         cur->next = prev;
         prev = cur;
-        cur = temp;
+        cur = next;
     }
 
     *head = prev;
@@ -113,11 +113,11 @@ int main()
     struct node *head = NULL;
 
 
-    add_list(&head, 1);        
-    add_list(&head, 3);        
-    add_list(&head, 2);        
     add_list(&head, 5);        
     add_list(&head, 4);        
+    add_list(&head, 3);        
+    add_list(&head, 2);        
+    add_list(&head, 1);        
 
 	LOGD("\n--------list:\t");
     print_list(head);
